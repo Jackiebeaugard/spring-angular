@@ -13,6 +13,15 @@ Start directory: start here!
 - That's it! Click Next > Finish or Generate, depending on whether you're in Intellij or https://start.spring.io
 - Alternately you can simply download or clone this entire repository, and open this directory in your IDE.
 
+## Step 2
+- We are, at the most basic level, using the MVC, or [Model-View-Controller](https://www.codecademy.com/articles/mvc) software design pattern
+  - Models are a representation (a model, if you will) of your Data. Models will often replicate the shape/structure of your database tables
+  - Views display your data
+  - Controllers provide model data to the view
+- Java adds a few other elements in there
+  - Service
+  - Repository
+
 Java directory: basic java application, the initial end goal!
 
 Stretch goal: this is what you can do!
