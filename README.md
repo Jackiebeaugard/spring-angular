@@ -45,7 +45,7 @@ todo-end directory: this is what it should look like at the finish
 
 ## Step 3: Create your Repository
 - Extend JpaRepository
-- 
+- https://www.baeldung.com/spring-data-derived-queries
 
 ## Step 4: Create your Controller
 - Generate CRUD functionality in your controller - there should be one method each for 
@@ -57,6 +57,20 @@ todo-end directory: this is what it should look like at the finish
 
 ## Step 5: Let's test it with PostMan/Swagger Inspector
 - How does path variable input differ from request body?
+
+```
+// Sample Task JSON
+    {
+        "id": 1,
+        "title": "task 1",
+        "done": true
+    },
+    {
+        "id": 2,
+        "title": "task 2",
+        "done": false
+    }
+```
 
 
 
