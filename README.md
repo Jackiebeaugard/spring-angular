@@ -24,7 +24,7 @@ todo-end directory: this is what it should look like at the finish
     - From our P12 Week 1 Spring MVC assignment: https://github.com/spring-guides/gs-validating-form-input
 ### API: Application Programming Interface
   - What is an API?
-    - An API provides a set of exposed end
+    - An API provides a set of "exposed" end points that allow software programs to interact with each other
     - https://www.howtogeek.com/343877/what-is-an-api/
     - In English, please: https://www.freecodecamp.org/news/what-is-an-api-in-english-please-b880a3214a82/
   - What is REST?
@@ -58,7 +58,8 @@ todo-end directory: this is what it should look like at the finish
 - What annotations do we need here? What are they doing for us?
   - https://www.baeldung.com/spring-controller-vs-restcontroller
   - https://www.baeldung.com/spring-request-response-body
-  - Serialization/Deserialization are...words - but what do they mean? https://cheatsheetseries.owasp.org/cheatsheets/Deserialization_Cheat_Sheet.html
+  - Serialization/Deserialization are...words - but what do they mean? 
+    - What is Deserialization: https://cheatsheetseries.owasp.org/cheatsheets/Deserialization_Cheat_Sheet.html#what-is-deserialization
 
 ## Step 5: Let's test it with PostMan/Swagger Inspector
 - How does path variable input differ from request body?
