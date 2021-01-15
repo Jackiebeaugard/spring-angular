@@ -49,7 +49,7 @@ todo-end directory: this is what it should look like at the finish
 - https://www.baeldung.com/spring-data-derived-queries
 
 ## Step 4: Create your Controller
-- Autowire your Rep
+- Autowire your Repository
 - Generate CRUD functionality in your controller - there should be one method each for 
   - Create: GET mapping
   - Read: POST mapping
