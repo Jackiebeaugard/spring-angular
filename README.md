@@ -45,15 +45,20 @@ todo-end directory: this is what it should look like at the finish
 
 ## Step 3: Create your Repository
 - Extend JpaRepository
+- We don't need to put anything in here yet.
 - https://www.baeldung.com/spring-data-derived-queries
 
 ## Step 4: Create your Controller
+- Autowire your Rep
 - Generate CRUD functionality in your controller - there should be one method each for 
   - Create: GET mapping
   - Read: POST mapping
   - Update: PUT mapping
   - Delete: DELETE mapping
 - What annotations do we need here? What are they doing for us?
+  - https://www.baeldung.com/spring-controller-vs-restcontroller
+  - https://www.baeldung.com/spring-request-response-body
+  - Serialization/Deserialization are...words - but what do they mean? https://cheatsheetseries.owasp.org/cheatsheets/Deserialization_Cheat_Sheet.html
 
 ## Step 5: Let's test it with PostMan/Swagger Inspector
 - How does path variable input differ from request body?
