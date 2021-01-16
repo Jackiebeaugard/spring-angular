@@ -77,6 +77,10 @@ todo-end directory: this is what it should look like at the finish
         "done": false
     }
 ```
+## Bonus
+
+- Now look at how we have added the `@CrossOrigin` annotation in TaskController.java - this will allow us to make requests locally from a separate front end application
+- Try running todo-frontend at the same time as your java project, and go to `localhost:4200/todo` in your browser after adding a few tasks through Postman or Swagger Inspector
 
 
 
