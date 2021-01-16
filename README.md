@@ -1,8 +1,5 @@
 # TODO Demo Application
 
-todo-start directory: start here!
-todo-end directory: this is what it should look like at the finish
-
 ## Step 1: Create your project
 - Create a new project in IntelliJ using Spring Initializr, or via https://start.spring.io
 - Project SDK: openjdk-15 or whatever the default is, starter service URL: Default https://start.spring.io
@@ -12,7 +9,7 @@ todo-end directory: this is what it should look like at the finish
   - SQL: Spring Data JPA, to make it easier to access/save data in the database; you may see it referred to as an ORM, or [Object Relational Mapper](https://blog.bitsrc.io/what-is-an-orm-and-why-you-should-use-it-b2b6f75f5e2a)
   - SQL: H2 Database, lightweight in-memory database with minimal configuration
 - That's it! Click Next > Finish or Generate, depending on whether you're in Intellij or https://start.spring.io
-- Alternately you can simply download or clone this entire repository, and open this directory in your IDE.
+- Alternately you can simply download or clone this entire repository, and open the `todo-start` directory in your IDE
 
 ## Concepts: MVC vs API
 ### MVC: Model, View, Controller
