@@ -9,12 +9,13 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
+@CrossOrigin
 @RestController
 @RequestMapping(value = "/todo")
 public class TaskController {
   @Autowired
   private TaskRepository taskRepository;
-  
+
   @GetMapping
   public List<Task> findAll() { return taskRepository.findAll(); };
   
