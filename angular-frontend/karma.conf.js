@@ -19,7 +19,7 @@ module.exports = function (config) {
       suppressAll: true // removes the duplicated traces
     },
     coverageReporter: {
-      dir: require('path').join(__dirname, './coverage/todo-frontend'),
+      dir: require('path').join(__dirname, './coverage/angular-frontend'),
       subdir: '.',
       reporters: [
         { type: 'html' },
