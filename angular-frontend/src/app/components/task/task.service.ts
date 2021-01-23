@@ -2,7 +2,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
-import { Task } from './task.interface';
+import { Task } from '../../shared/task.interface';
 
 const httpOptions = {
   headers: new HttpHeaders({ 'Content-Type': 'application/json' })
@@ -15,7 +15,7 @@ export class TaskService {
   constructor(private http: HttpClient) {}
 
   getAllTasks(): Observable<Task[]> {
-    return this.http.get('http://localhost:8080/todo', httpOptions).pipe(map(response => {
+    return this.http.get('http://localhost:8080/tasks', httpOptions).pipe(map(response => {
       return response as Task[];
     }))
   }

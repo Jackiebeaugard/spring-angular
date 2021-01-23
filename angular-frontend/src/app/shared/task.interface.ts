@@ -1,5 +1,9 @@
+import { Project } from "./project.interface";
+
 export interface Task {
     id: number,
     title: string,
-    done: boolean
+    detail?: string,
+    complete: boolean,
+    project_id: number
 }

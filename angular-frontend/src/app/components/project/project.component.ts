@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { Project } from 'src/app/shared/project.interface';
 import { Task } from 'src/app/shared/task.interface';
-import { TaskService } from 'src/app/shared/task.service';
+import { TaskService } from 'src/app/components/task/task.service';
 
 @Component({
   selector: 'app-project',
@@ -8,6 +9,7 @@ import { TaskService } from 'src/app/shared/task.service';
   styleUrls: ['./project.component.scss']
 })
 export class ProjectComponent implements OnInit {
+  @Input() project!: Project;
   taskList: Task[] = [];
 
   constructor(private taskService: TaskService) { }
