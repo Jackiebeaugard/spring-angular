@@ -1,4 +1,4 @@
-# TODO Demo Application
+# Spring Angular Demo Application
 
 ## Step 1: Create your project
 - Create a new project in IntelliJ using Spring Initializr, or via https://start.spring.io
@@ -62,21 +62,13 @@
 - How does path variable input differ from request body?
 
 ```
-// Sample Task JSON
-    {
-        "id": 1,
-        "title": "task 1",
-        "done": true
-    },
-    {
-        "id": 2,
-        "title": "task 2",
-        "done": false
-    }
+// Sample JSON
+// TODO: Fix this
 ```
-## Bonus
+## Communicating with the front end application
 
 - Now look at how we have added the `@CrossOrigin` annotation in TaskController.java - this will allow us to make requests locally from a separate front end application
+// TODO: Fix todo-frontend reference and path
 - Try running todo-frontend at the same time as your java project, and go to `localhost:4200/todo` in your browser after adding a few tasks through Postman or Swagger Inspector
 
 
