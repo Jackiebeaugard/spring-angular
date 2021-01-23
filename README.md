@@ -33,6 +33,7 @@
       - DELETE: remove a specific resource by id
 
 ## Step 2: Create your Model
+// TODO: update attribute references
 - There should be 3 attributes for your model:
   - id: this should be a generated value
   - title
