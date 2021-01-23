@@ -1,5 +1,32 @@
-<div class="card">
-    <div class="card-header">{{ project?.title }}</div>
-    <div class="card-body"></div>
-    <div class="card-footer">{{ project?.complete }}</div>
-</div>
+<!-- <h3 class="text-center">{{ title }}</h3> -->
+<ng-container *ngFor="let task of taskList">
+    <div class="py-2">
+        <div class="card">
+            <div class="card-header">
+                <div class="row">
+                    <div class="col-xs-12 col-sm-6">{{ task.title }}</div>
+                    <div class="col-xs-12 col-sm-6">
+                        <button type="button" class="btn btn-info">
+                            <fa-icon [icon]="['fas', 'plus']"></fa-icon>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="card-body">
+                {{ task.detail }}
+            </div>
+            <div class="card-footer">
+                <div class="row">
+                    <div class="col-xs-12 col-sm-6">
+                        {{ task.complete }}
+                    </div>
+                    <div class="col-xs-12 col-sm-6">
+                        <button type="button" class="btn btn-secondary">
+                            <fa-icon [icon]="['fas', 'trash']"></fa-icon>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</ng-container>

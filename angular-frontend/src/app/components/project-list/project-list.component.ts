@@ -8,7 +8,10 @@ import { ProjectListService } from './project-list.service';
   styleUrls: ['./project-list.component.scss']
 })
 export class ProjectListComponent implements OnInit {
+  addButtonText: string = 'Add Project';
+  completeButtonText: string = 'Complete';
   projectList: Project[] = [];
+  title: string = 'Projects';
 
   constructor(private projectListService: ProjectListService) { }
 
