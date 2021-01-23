@@ -9,6 +9,7 @@
   - SQL: Spring Data JPA, to make it easier to access/save data in the database; you may see it referred to as an ORM, or [Object Relational Mapper](https://blog.bitsrc.io/what-is-an-orm-and-why-you-should-use-it-b2b6f75f5e2a)
   - SQL: H2 Database, lightweight in-memory database with minimal configuration
 - That's it! Click Next > Finish or Generate, depending on whether you're in Intellij or https://start.spring.io
+// TODO: fix todo-start reference here, or remove this completely
 - Alternately you can simply download or clone this entire repository, and open the `todo-start` directory in your IDE
 
 ## Concepts: MVC vs API
