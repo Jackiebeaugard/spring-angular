@@ -9,7 +9,7 @@
   - SQL: Spring Data JPA, to make it easier to access/save data in the database; you may see it referred to as an ORM, or [Object Relational Mapper](https://blog.bitsrc.io/what-is-an-orm-and-why-you-should-use-it-b2b6f75f5e2a)
   - SQL: H2 Database, lightweight in-memory database with minimal configuration
 - That's it! Click Next > Finish or Generate, depending on whether you're in Intellij or https://start.spring.io
-// TODO: fix todo-start reference here, or remove this completely
+`// TODO: fix todo-start reference here, or remove this completely`
 - Alternately you can simply download or clone this entire repository, and open the `todo-start` directory in your IDE
 
 ## Concepts: MVC vs API
@@ -33,7 +33,7 @@
       - DELETE: remove a specific resource by id
 
 ## Step 2: Create your Model
-// TODO: update attribute references
+`// TODO: update attribute references`
 - There should be 3 attributes for your model:
   - id: this should be a generated value
   - title
@@ -70,7 +70,7 @@
 ## Communicating with the front end application
 
 - Now look at how we have added the `@CrossOrigin` annotation in TaskController.java - this will allow us to make requests locally from a separate front end application
-// TODO: Fix todo-frontend reference and path
+`// TODO: Fix todo-frontend reference and path`
 - Try running todo-frontend at the same time as your java project, and go to `localhost:4200/todo` in your browser after adding a few tasks through Postman or Swagger Inspector
 
 
