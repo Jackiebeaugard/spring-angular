@@ -1,12 +1,19 @@
-<div class="row" *ngIf="errorMessage; else projectList">
+<div class="row mt-4" *ngIf="errorMessage; else projects">
     <div class="alert alert-danger">{{ errorMessage }}</div>
 </div>
-<ng-template #projectList>
+<div class="row mt-4" *ngIf="projectList.length === 0">
+    <div class="alert alert-warning">{{ emptyListMessage }}</div>
+</div>
+<div class="row mt-4" *ngIf="markCompleteMessage">
+    <div class="alert alert-success">{{ markCompleteMessage }}</div>
+</div>
+<ng-template #projects>
+    <app-add-project></app-add-project>
     <div class="row">
         <div class="col-sm-4"></div>
         <div class="col-xs-12 col-sm-4"><h3 class="text-center">{{ title }}</h3></div>
         <div class="col-xs-12 col-sm-4">
-            <button class="btn btn-outline-info float-end me-3">
+            <button class="btn btn-outline-info float-end me-3" data-bs-toggle="modal" data-bs-target="#addProjectModal">
                 {{ addButtonText }}
                 <fa-icon [icon]="['fas', 'plus']"></fa-icon>
             </button>
@@ -15,33 +22,22 @@
     <ng-container *ngFor="let project of projectList">
         <div class="py-3">
             <div class="card">
-                <a [routerLink]="['/project', project.id]" class="text-decoration-none text-dark">
-                    <div class="card-header bg-info">
-                        <div class="row">
-                            <div class="col-xs-12 col-sm-6 fs-5 pt-1">{{ project.title }}</div>
-                            <div class="col-xs-12 col-sm-6">
-                                <button type="button" class="btn btn-success float-end">
-                                    {{ completeButtonText }}
-                                    <fa-icon [icon]="['fas', 'check']"></fa-icon>
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                </a>
+                <div class="card-header bg-info">
+                    <a [routerLink]="['/project', project.id]" class="text-decoration-none text-dark pt-2 float-start">
+                        {{ project.title }}
+                    </a>
+                    <button type="button" class="btn btn-success float-end" [disabled]="project.complete" (click)="markComplete(project.id)">
+                        {{ completeButtonText }}
+                        <fa-icon [icon]="['fas', 'check']"></fa-icon>
+                    </button>
+                </div>
                 <div class="card-body">
                     {{ project.description }}
                 </div>
                 <div class="card-footer bg-light">
-                    <div class="row">
-                        <div class="col-xs-12 col-sm-6">
-                            {{ project.complete }}
-                        </div>
-                        <div class="col-xs-12 col-sm-6">
-                            <button type="button" class="btn btn-outline-secondary float-end">
-                                <fa-icon [icon]="['fas', 'trash']"></fa-icon>
-                            </button>
-                        </div>
-                    </div>
+                    <button type="button" class="btn btn-outline-secondary float-end" (click)="deleteProject(project.id)">
+                        <fa-icon [icon]="['fas', 'trash']"></fa-icon>
+                    </button>
                 </div>
             </div>
         </div>

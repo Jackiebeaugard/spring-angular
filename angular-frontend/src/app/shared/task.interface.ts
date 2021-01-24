@@ -1,7 +1,7 @@
 import { Project } from "./project.interface";
 
 export interface Task {
-    id: number,
+    id?: number,
     title: string,
     detail?: string,
     complete: boolean,

@@ -7,10 +7,11 @@ import { TaskComponent } from './components/task/task.component';
 import { ProjectComponent } from './components/project/project.component';
 import { ProjectListComponent } from './components/project-list/project-list.component';
 import { FontAwesomeModule, FaIconLibrary } from '@fortawesome/angular-fontawesome';
-import { faCheck, faPlus, faTrash } from '@fortawesome/free-solid-svg-icons';
+import { faCheck, faPencilAlt, faPlus, faTrash } from '@fortawesome/free-solid-svg-icons';
 import { HeaderComponent } from './components/header/header.component';
 import { AddProjectComponent } from './components/add-project/add-project.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { EditProjectComponent } from './components/edit-project/edit-project.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     ProjectComponent,
     ProjectListComponent,
     HeaderComponent,
-    AddProjectComponent
+    AddProjectComponent,
+    EditProjectComponent
   ],
   imports: [
     BrowserModule,
@@ -34,5 +36,5 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
   bootstrap: [AppComponent]
 })
 export class AppModule {
-  constructor(library: FaIconLibrary) { library.addIcons(faTrash, faPlus, faCheck); }
+  constructor(library: FaIconLibrary) { library.addIcons(faTrash, faPlus, faCheck, faPencilAlt); }
 }

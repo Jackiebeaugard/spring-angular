@@ -1,4 +1,4 @@
-<div id="addProjectModal" class="modal fade" tabindex="-1" aria-labelledby="addProjectLabel">
+<div id="editProjectModal" class="modal fade" tabindex="-1" aria-labelledby="addProjectLabel">
     <div class="modal-dialog">
         <div class="modal-content">
             <form [formGroup]="form" (ngSubmit)="submit()">
@@ -22,6 +22,10 @@
                         <div class="col-xs-12">
                             <textarea formControlName="description"></textarea>
                         </div>
+                    </div>
+                    <div class="row mb-2">
+                        <label for="title" class="me-2 mb-2">Complete? </label>
+                        <input type="checkbox" formControlName="complete" />
                     </div>
                 </div>
                 <div class="modal-footer">

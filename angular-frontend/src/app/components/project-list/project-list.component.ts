@@ -1,8 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { of, throwError } from 'rxjs';
-import { catchError } from 'rxjs/operators';
 import { Project } from 'src/app/shared/project.interface';
-import { ProjectListService } from './project-list.service';
+import { ProjectService } from '../project/project.service';
 
 @Component({
   selector: 'app-project-list',
@@ -12,16 +10,44 @@ import { ProjectListService } from './project-list.service';
 export class ProjectListComponent implements OnInit {
   addButtonText: string = 'Add Project';
   completeButtonText: string = 'Complete';
+  emptyListMessage: string = 'There are no projects here. Click the Add Project button to get started!'
   errorMessage: string | null = null;
+  markCompleteMessage: string | null = null;
   projectList: Project[] = [];
   title: string = 'Projects';
 
-  constructor(private projectListService: ProjectListService) { console.log('project list: ') }
+  constructor(private projectService: ProjectService) { }
 
   ngOnInit(): void {
-    this.projectListService.getAllProjects().subscribe((projects: Project[]) => {
-      console.log('projects: ', projects)
+    this.getProjects();
+  }
+
+  getProjects(): void {
+    this.projectService.getAllProjects().subscribe((projects: Project[]) => {
       this.projectList = projects
     });
+  }
+
+  deleteProject(id: number | undefined): void {
+    if (typeof id === 'number') {
+      this.projectService.deleteProject(id).subscribe(() => {
+        this.projectList = this.projectList.filter(project => project.id !== id);
+      });
+    }
+  }
+
+  markComplete(id: number | undefined): void {
+    if (typeof id === 'number') {
+      const project: Project | undefined = this.projectList.find(project => project.id === id);
+      if(project) {
+        project.complete = true;
+        this.markCompleteMessage = `Project ${project.title} has been marked complete!`;
+        this.projectService.updateProject(project).subscribe(() => {
+          setTimeout(() => {
+            this.markCompleteMessage = null;
+          }, 5000)
+        });
+      }
+    }
   }
 }

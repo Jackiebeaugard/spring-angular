@@ -1,45 +1,49 @@
-<div class="row">
-    <div class="col-sm-4"></div>
-    <div class="col-xs-12 col-sm-4"><h3 class="text-center">{{ project?.title }}</h3></div>
-    <div class="col-xs-12 col-sm-4">
-        <button class="btn btn-outline-info float-end me-3">
-            {{ addButtonText }}
-            <fa-icon [icon]="['fas', 'plus']"></fa-icon>
-        </button>
+<ng-container id="alert-container">
+    <div class="row mt-4" *ngIf="taskList.length === 0">
+        <div class="alert alert-warning">{{ emptyListMessage }}</div>
     </div>
-</div>
-<div class="row"><div class="col-xs-12">Description: {{ project?.description }}</div></div>
-<ng-container *ngFor="let task of taskList">
-    <div class="py-3">
-        <div class="card">
-            <a [routerLink]="['/task', task.id]" class="text-decoration-none text-dark">
-                <div class="card-header bg-info">
-                    <div class="row">
-                        <div class="col-xs-12 col-sm-6 fs-5 pt-1">{{ task?.title }}</div>
-                        <div class="col-xs-12 col-sm-6">
-                            <button type="button" class="btn btn-success float-end">
-                                {{ completeButtonText }}
-                                <fa-icon [icon]="['fas', 'check']"></fa-icon>
-                            </button>
+    <div class="row mt-4" *ngIf="markCompleteMessage">
+        <div class="alert alert-success">{{ markCompleteMessage }}</div>
+    </div>
+</ng-container>
+<ng-container id="title-container">
+    <button type="button" class="btn btn-secondary float-start" data-bs-toggle="modal" data-bs-target="#editProjectModal">
+        {{ editButtonText }}
+        <fa-icon [icon]="['fas', 'pencil-alt']"></fa-icon>
+    </button>
+    <h3 class="text-center">{{ project?.title }}</h3>
+    <button class="btn btn-outline-info float-end">
+        {{ addButtonText }}
+        <fa-icon [icon]="['fas', 'plus']"></fa-icon>
+    </button>
+</ng-container>
+<ng-container id="content-container">
+    <div class="my-5">Description: {{ project?.description }}</div>
+    <ng-container *ngFor="let task of taskList">
+        <div class="py-3">
+            <div class="card">
+                <a [routerLink]="['/task', task.id]" class="text-decoration-none text-dark">
+                    <div class="card-header bg-info">
+                        <div class="row">
+                            <div class="col-xs-12 col-sm-6 fs-5 pt-1">{{ task?.title }}</div>
+                            <div class="col-xs-12 col-sm-6">
+                                <button type="button" class="btn btn-success float-end">
+                                    {{ completeButtonText }}
+                                    <fa-icon [icon]="['fas', 'check']"></fa-icon>
+                                </button>
+                            </div>
                         </div>
                     </div>
+                </a>
+                <div class="card-body">
+                    {{ task?.detail }}
                 </div>
-            </a>
-            <div class="card-body">
-                {{ task?.detail }}
-            </div>
-            <div class="card-footer bg-light">
-                <div class="row">
-                    <div class="col-xs-12 col-sm-6">
-                        {{ task?.complete }}
-                    </div>
-                    <div class="col-xs-12 col-sm-6">
-                        <button type="button" class="btn btn-outline-secondary float-end">
-                            <fa-icon [icon]="['fas', 'trash']"></fa-icon>
-                        </button>
-                    </div>
+                <div class="card-footer bg-light">
+                    <button type="button" class="btn btn-outline-secondary float-end">
+                        <fa-icon [icon]="['fas', 'trash']"></fa-icon>
+                    </button>
                 </div>
             </div>
         </div>
-    </div>
+    </ng-container>
 </ng-container>
