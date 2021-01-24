@@ -1,7 +1,7 @@
 import { HttpHeaders, HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
-import { map } from 'rxjs/operators';
+import { Observable, of } from 'rxjs';
+import { catchError, map } from 'rxjs/operators';
 import { Project } from 'src/app/shared/project.interface';
 
 const httpOptions = {
@@ -21,8 +21,8 @@ export class ProjectListService {
     }))
   }
 
-  getProject(id: number): Observable<Project | void> {
-    return this.http.get(`${this.url}${id}`, httpOptions).pipe(map(response => {
+  getProject(id: number): Observable<Project> {
+    return this.http.get(`${this.url}/${id}`, httpOptions).pipe(map(response => {
       return response as Project;
     }))
   }

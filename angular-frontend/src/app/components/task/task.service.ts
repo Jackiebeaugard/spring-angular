@@ -12,10 +12,11 @@ const httpOptions = {
   providedIn: 'root'
 })
 export class TaskService {
+  private url: string = 'http://localhost:8080/tasks';
   constructor(private http: HttpClient) {}
 
-  getAllTasks(): Observable<Task[]> {
-    return this.http.get('http://localhost:8080/tasks', httpOptions).pipe(map(response => {
+  getTasksByProject(id: number): Observable<Task[]> {
+    return this.http.get(`${this.url}/${id}`, httpOptions).pipe(map(response => {
       return response as Task[];
     }))
   }
