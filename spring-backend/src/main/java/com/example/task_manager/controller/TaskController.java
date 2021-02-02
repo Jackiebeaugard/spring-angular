@@ -11,7 +11,7 @@ import java.util.List;
 
 @CrossOrigin
 @RestController
-@RequestMapping(value = "/todo")
+@RequestMapping(value = "/api/todo")
 public class TaskController {
   @Autowired
   private TaskRepository taskRepository;
