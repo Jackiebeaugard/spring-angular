@@ -21,6 +21,10 @@ public class Task {
     this.done = done;
   }
 
+  public Task(String t) {
+      this.title=t;
+  }
+
   public Task() {
   }
 
