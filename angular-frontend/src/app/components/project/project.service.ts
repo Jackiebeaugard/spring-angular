@@ -12,7 +12,7 @@ const httpOptions = {
   providedIn: 'root'
 })
 export class ProjectService {
-  private url: string = 'http://localhost:8080/api/projects';
+  private url: string = '/api/projects';
   constructor(private http: HttpClient) {}
 
   getAllProjects(): Observable<Project[]> {
@@ -20,7 +20,7 @@ export class ProjectService {
       return response as Project[];
     }))
   }
-  
+
   getProject(id: number): Observable<Project> {
     return this.http.get(`${this.url}/${id}`, httpOptions).pipe(map(response => {
       return response as Project;

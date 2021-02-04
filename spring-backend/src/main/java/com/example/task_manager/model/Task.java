@@ -28,6 +28,10 @@ public class Task {
     this.project = project;
   }
 
+  public Task(String t) {
+      this.title=t;
+  }
+
   public Task() {
   }
 

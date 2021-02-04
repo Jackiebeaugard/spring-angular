@@ -12,7 +12,7 @@ const httpOptions = {
   providedIn: 'root'
 })
 export class TaskService {
-  private url: string = 'http://localhost:8080/api/tasks';
+  private url: string = '/api/tasks';
   constructor(private http: HttpClient) {}
 
   getTasksByProject(id: number): Observable<Task[]> {
