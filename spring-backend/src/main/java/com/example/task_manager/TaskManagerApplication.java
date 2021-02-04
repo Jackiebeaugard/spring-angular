@@ -1,4 +1,4 @@
-package com.example.todo;
+package com.example.task_manager;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
