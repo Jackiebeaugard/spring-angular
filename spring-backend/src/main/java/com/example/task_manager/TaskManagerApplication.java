@@ -14,10 +14,4 @@ public class TaskManagerApplication implements CommandLineRunner {
   public static void main(String[] args) {
     SpringApplication.run(TaskManagerApplication.class, args);
   }
-
-  @Override
-  public void run(String... args) throws Exception {
-    com.example.todo.model.Task walkPoppy = new com.example.todo.model.Task("Walk Poppy");
-    taskRepository.save(walkPoppy);
-  }
 }
