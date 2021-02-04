@@ -1,34 +1,32 @@
 package com.example.task_manager.model;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.sun.istack.NotNull;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
-public class Task {
+public class Project {
   @Id
   @GeneratedValue
   private Long id;
   @NotNull
   private String title;
-  private String detail;
+  private String description;
   private boolean complete;
 
-  @JsonIgnore
-  @ManyToOne
-  @JoinColumn(name="project_id", nullable = false)
-  private Project project;
+  @OneToMany(mappedBy = "project", cascade = CascadeType.ALL)
+  private List<Task> tasks;
 
-  public Task(Long id, String title, String detail, boolean complete, Project project) {
+  public Project(Long id, String title, String description, boolean complete, List<Task> tasks) {
     this.id = id;
     this.title = title;
-    this.detail = detail;
+    this.description = description;
     this.complete = complete;
-    this.project = project;
+    this.tasks = tasks;
   }
 
-  public Task() {
+  public Project() {
   }
 
   public Long getId() {
@@ -47,12 +45,12 @@ public class Task {
     this.title = title;
   }
 
-  public String getDetail() {
-    return detail;
+  public String getDescription() {
+    return description;
   }
 
-  public void setDetail(String detail) {
-    this.detail = detail;
+  public void setDescription(String description) {
+    this.description = description;
   }
 
   public boolean isComplete() {
@@ -63,11 +61,11 @@ public class Task {
     this.complete = complete;
   }
 
-  public Project getProject() {
-    return project;
+  public List<Task> getTasks() {
+    return tasks;
   }
 
-  public void setProject(Project project) {
-    this.project = project;
+  public void setTasks(List<Task> tasks) {
+    this.tasks = tasks;
   }
 }

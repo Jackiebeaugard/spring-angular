@@ -1,7 +1,7 @@
-package com.example.todo.controller;
+package com.example.task_manager.controller;
 
-import com.example.todo.model.Task;
-import com.example.todo.repository.TaskRepository;
+import com.example.task_manager.model.Task;
+import com.example.task_manager.repository.TaskRepository;
 import com.sun.istack.NotNull;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.validation.annotation.Validated;
@@ -9,15 +9,18 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-@CrossOrigin
+@CrossOrigin(origins = "http://localhost:4200")
 @RestController
-@RequestMapping(value = "/todo")
+@RequestMapping(value = "/api/tasks")
 public class TaskController {
   @Autowired
   private TaskRepository taskRepository;
 
   @GetMapping
   public List<Task> findAll() { return taskRepository.findAll(); };
+
+  @GetMapping(value="/{project_id}")
+  public List<Task> findByProjectId(@PathVariable Long project_id) { return taskRepository.findAllByProjectId(project_id); }
   
   @PostMapping
   public Task save(@Validated @NotNull @RequestBody Task task) {
