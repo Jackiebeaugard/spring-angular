@@ -12,8 +12,7 @@ const httpOptions = {
   providedIn: 'root'
 })
 export class ProjectService {
-  // TODO: Switch back to projects: private url: string = '/api/projects';
-  private url: string = '/api/todo';
+  private url: string = '/api/projects';
   constructor(private http: HttpClient) {}
 
   getAllProjects(): Observable<Project[]> {
