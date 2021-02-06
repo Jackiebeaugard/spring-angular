@@ -35,7 +35,7 @@
   - A software design pattern that separates an application into three main logical components
     - Model: describes the data and its related logic
     - View: presentation of the data
-    - Controller: controls user interation
+    - Controller: controls user interaction
   - Examples
     - From our P12 Week 1 Spring MVC assignment: https://github.com/spring-guides/gs-validating-form-input
 ### API: Application Programming Interface
@@ -62,6 +62,7 @@
 - https://www.baeldung.com/spring-data-derived-queries
 
 ## Step 4: Create your Controller
+- https://www.baeldung.com/spring-controllers
 - Autowire your Repository
 - Generate CRUD functionality in your controller - there should be one method each for 
   - Create: GET mapping
