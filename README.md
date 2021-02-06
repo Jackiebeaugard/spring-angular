@@ -44,6 +44,7 @@
     - https://www.howtogeek.com/343877/what-is-an-api/
     - In English, please: https://www.freecodecamp.org/news/what-is-an-api-in-english-please-b880a3214a82/
   - What is REST?
+    - https://restfulapi.net/rest-architectural-constraints/
     - An architectural style that provides certain standards for API development, such as the HTTP verbs GET/PUT/POST/DELETE
       - GET: retrieve a specific resource (by id) or a collection of resources
       - POST: create a new resource
