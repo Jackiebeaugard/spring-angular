@@ -62,9 +62,6 @@
   - Serialization/Deserialization are...words - but what do they mean? 
     - What is Deserialization: https://cheatsheetseries.owasp.org/cheatsheets/Deserialization_Cheat_Sheet.html#what-is-deserialization
 
-## Step 5: Let's test it with PostMan/Swagger Inspector
-- How does path variable input differ from request body?
-
 ## Communicating with the front end application
 - Now look at how we have added the `@CrossOrigin` annotation in TaskController.java - this will allow us to make requests locally from a separate front end application
 - Try running angular-frontend at the same time as your java project, and go to `localhost:4200/` in your browser
