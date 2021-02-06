@@ -8,7 +8,7 @@
 - Run `ng serve --proxy-config proxy.conf.json`
 - Open your browser, and navigate to http://localhost:4200  
 
-** *Note, not all features are fully built out for this demo application. Try to add one of your own!*
+** *Note: not all features are fully built out for this demo application. Try to add one of your own!*
 
 ## Step 1: Create your project
 - Create a new project in IntelliJ using Spring Initializr, or via https://start.spring.io
