@@ -58,7 +58,7 @@
 ## Step 3: Create your Repository
 - Extend JpaRepository
 - We don't need to put anything in here yet.
-- https://www.baeldung.com/spring-data-derived-queries // TODO: derived vs named queries
+- https://www.baeldung.com/spring-data-derived-queries
 
 ## Step 4: Create your Controller
 - Autowire your Repository
