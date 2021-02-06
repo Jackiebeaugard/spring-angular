@@ -8,7 +8,7 @@ import java.util.List;
 @Entity
 public class Project {
   @Id
-  @GeneratedValue
+  @GeneratedValue(strategy = GenerationType.IDENTITY)
   private Long id;
   @NotNull
   private String title;

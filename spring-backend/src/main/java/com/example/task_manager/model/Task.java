@@ -8,7 +8,7 @@ import javax.persistence.*;
 @Entity
 public class Task {
   @Id
-  @GeneratedValue
+  @GeneratedValue(strategy = GenerationType.IDENTITY)
   private Long id;
   @NotNull
   private String title;
@@ -16,7 +16,7 @@ public class Task {
   private boolean complete;
 
   @JsonIgnore
-  @ManyToOne
+  @ManyToOne(cascade= CascadeType.ALL)
   @JoinColumn(name="project_id", nullable = false)
   private Project project;
 
@@ -28,12 +28,7 @@ public class Task {
     this.project = project;
   }
 
-  public Task(String t) {
-      this.title=t;
-  }
-
-  public Task() {
-  }
+  public Task() {}
 
   public Long getId() {
     return id;

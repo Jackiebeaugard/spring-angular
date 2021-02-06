@@ -64,4 +64,5 @@
 
 ## Communicating with the front end application
 - Now look at how we have added the `@CrossOrigin` annotation in TaskController.java - this will allow us to make requests locally from a separate front end application
+  - Why is this necessary? Check out this resource on CORS: [Cross-Origin Resource Sharing](https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS)
 - Try running angular-frontend at the same time as your java project, and go to `localhost:4200/` in your browser

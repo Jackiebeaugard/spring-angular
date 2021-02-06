@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 import java.util.Optional;
 
-@CrossOrigin(origins = "http://localhost:4200")
+@CrossOrigin
 @RestController
 @RequestMapping(value = "/api/projects")
 public class ProjectController {
@@ -35,7 +35,6 @@ public class ProjectController {
 
   @DeleteMapping(value="/{id}")
   public void delete(@PathVariable Long id) {
-    System.out.println("This is the id: " + id);
     projectRepository.deleteById(id);
   }
 }
