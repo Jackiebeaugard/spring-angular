@@ -57,6 +57,7 @@
 
 ## Step 3: Create your Repository
 - Extend JpaRepository
+- https://www.baeldung.com/spring-data-repositories
 - We don't need to put anything in here yet.
 - https://www.baeldung.com/spring-data-derived-queries
 
