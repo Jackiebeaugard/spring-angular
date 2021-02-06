@@ -48,6 +48,7 @@
       - GET: retrieve a specific resource (by id) or a collection of resources
       - POST: create a new resource
       - PUT: update a specific resource (by id)
+      - (PATCH: updates a subset of your existing resource by id)
       - DELETE: remove a specific resource by id
 
 ## Step 2: Create your Model
