@@ -5,19 +5,20 @@
 - Project options:
   - Project SDK: openjdk-15 or whatever the default is
   - Starter service URL: Default https://start.spring.io
-  - Group: com.example
-  - Artifact: task_manager
+  - Group: com.mcc
+  - Artifact: husqr
   - Type: Gradle
   - Language: Java
   - Packaging: Jar
   - Java version: 11
   - Version/Name/Description/Package: leave as default
 - Dependencies: 
-  - Web: Spring Web, to get the REST controllers, @Get/@Post mappings
+  - Web: Spring Web, to get the REST controllers, request mappings
   - SQL: Spring Data JPA, to make it easier to access/save data in the database; you may see it referred to as an ORM, or [Object Relational Mapper](https://blog.bitsrc.io/what-is-an-orm-and-why-you-should-use-it-b2b6f75f5e2a)
   - SQL: H2 Database, lightweight in-memory database with minimal configuration
 - That's it! Click Next > Finish or Generate, depending on whether you're in Intellij or https://start.spring.io
-- Alternately you can simply download or clone this entire repository, and open the `spring-backend` directory in your IDE
+
+* Also, feel free to bookmark or fork this repository to refer to later
 
 ## Concepts: MVC vs API
 ### MVC: Model, View, Controller
@@ -47,7 +48,7 @@
 ## Step 3: Create your Repository
 - Extend JpaRepository
 - We don't need to put anything in here yet.
-- https://www.baeldung.com/spring-data-derived-queries
+- https://www.baeldung.com/spring-data-derived-queries // TODO: derived vs named queries
 
 ## Step 4: Create your Controller
 - Autowire your Repository
@@ -64,4 +65,4 @@
 
 ## Communicating with the front end application
 - Now look at how we have added the `@CrossOrigin` annotation in TaskController.java - this will allow us to make requests locally from a separate front end application
-- Try running angular-frontend at the same time as your java project, and go to `localhost:4200/` in your browser
+- Try running your Husqr front end at the same time as your API, and go to `localhost:4200/` in your browser!
